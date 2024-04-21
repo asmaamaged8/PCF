@@ -66,7 +66,7 @@ pipeline {
 
         stage('Scan Image for Common Vulnerabilities and Exposures') {
             steps {
-                sh 'trivy image asmaamaged/5g pcf --output trivy-report.json'
+                sh 'trivy image asmaamaged/5g:pcf --output trivy-report.json'
             }
         }
 
