@@ -58,7 +58,7 @@ pipeline {
             steps {
                 sh(script: """
                     docker images -a
-                    docker build -t asmaamaged/pcf:latest .
+                    docker build -t asmaamaged/5g-pcf:latest .
                     docker images -a
                 """)
             }
@@ -66,7 +66,7 @@ pipeline {
 
         stage('Scan Image for Common Vulnerabilities and Exposures') {
             steps {
-                sh 'trivy image asmaamaged/5g:pcf --output trivy-report.json'
+                sh 'trivy image asmaamaged/5g-pcf --output trivy-report.json'
             }
         }
 
